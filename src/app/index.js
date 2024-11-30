@@ -24,8 +24,8 @@ app.use(express.json())
 
 
 //ROUTES
-app.use('/auth',AUTH_ROUTES)
-app.use('/files',authenticateToken,FILE_ROUTES) 
+app.use('/api/auth',AUTH_ROUTES)
+app.use('/api/files',authenticateToken,FILE_ROUTES) 
 //app.use('/files',FILE_ROUTES) 
 
 
@@ -40,4 +40,5 @@ app.listen(PORT, ()=>{
     console.log("RUN EXPRESS " + PORT)
 });
 
+module.exports = app;
 

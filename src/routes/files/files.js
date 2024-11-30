@@ -50,7 +50,8 @@ router.post('/addFile', async (req,res)=>{
         const token = req.header('Authorization')?.split(' ')[1]; 
         let userId = jwtService.getIdFromToken(token)
 
-        let fileSave = controller.addFile(value, userId)
+        let fileSave = await controller.addFile(value, userId)
+        console.warn(fileSave)
         return res.json({data:fileSave});
 
     }catch(err){
